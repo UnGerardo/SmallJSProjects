@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#timerWidget {
+  width: 250px;
+  height: 250px;
+
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-image: conic-gradient(white 0deg, black 0deg, black 360deg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#whiteOverlay {
+  height: 240px;
+  width: 240px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer {
+  font-size: 76px;
+  height: 100px;
+  width: 150px;
+  text-align: center;
+  z-index: 10;
+}
