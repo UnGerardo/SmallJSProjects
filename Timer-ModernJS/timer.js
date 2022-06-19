@@ -15,6 +15,7 @@ class Timer {
 
   start = () => {
     this.startDate = new Date();
+    this.futureDate = new Date(Date.now() + parseFloat(this.durationInput.value)*1000)
     if(this.onStart) {
       this.onStart(this.timeRemaining);
     }
@@ -26,11 +27,12 @@ class Timer {
   };
   
   tick = () => {
-    this.timeRemaining = this.timeRemaining - .01;
+    const dateNow = new Date();
+    this.timeRemaining = (this.futureDate - dateNow)/1000;
     
     if(this.onTick) { this.onTick(this.timeRemaining); }
-
-    if(this.timeRemaining <= 0) {
+    if(dateNow >= this.futureDate) {
+      this.timeRemaining = 0;
       this.endDate = new Date();
       this.pause();
 

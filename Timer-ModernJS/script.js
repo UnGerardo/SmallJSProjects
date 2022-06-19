@@ -1,4 +1,3 @@
-// this timer is inaccurate because it is too slow, might be better to create a future date and update the timer based on the current date, every something miliseconds instead of 
 const durationInput = document.querySelector('#duration');
 const startButton = document.querySelector('#start');
 const pauseButton = document.querySelector('#pause');
@@ -17,6 +16,7 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
     circle.setAttribute('stroke-dashoffset', perimeter * timeRemaining / duration - perimeter);
   },
   onComplete() {
+    circle.setAttribute('stroke-dashoffset', perimeter * 0 / duration - perimeter);
     console.log(this.endDate - this.startDate)
   }
 });
